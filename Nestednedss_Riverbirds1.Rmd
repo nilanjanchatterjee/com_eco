@@ -1,0 +1,57 @@
+---
+title: "Nestedness of River Birds Community in Bhagirathi basin"
+author: "Nilanjan Chatterjee"
+date: "18 March 2019"
+output:
+  github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Defination of Nestedness
+Nestedness is a measure of structure in an ecological system. 
+There are different measures for nestedness. One common measure is calculating the temperature. 
+We will use that measure to calculate nestedness here. The value ranges from 0-100 where 0 stands for  perfectly nested community and 100 stands for random community
+
+## Getting the data in R
+```{r}
+library(vegan)
+setwd("D:/Work/River bird")
+bhagbird <-read.csv("allbird_38.csv")
+head(bhagbird)
+```
+## Calculating nestedness
+```{r}
+nesttry<-nestedtemp(bhagbird[,2:15])
+nesttry
+```
+
+## Including Plots
+The plots for nestedness temperature is given by
+Darker the colour means higher the probability of the species extinction from the site
+```{r}
+plot(nesttry, xlab = "Species", ylab="Sites",main="Extinction probability")
+plot(nesttry, kind="incidence",xlab = "Species", ylab="Sites",main="Presence-absence")
+```
+
+##Reference
+Almeida-Neto, M., Guimarães, P., Guimarães, P.R., Loyola, R.D. & Ulrich, W. (2008). A consistent metric for nestedness analysis in ecological systems: reconciling concept and measurement. Oikos 117, 1227-1239.
+
+Almeida-Neto, M. & Ulrich, W. (2011). A straightforward computational approach for measuring nestedness using quantitative matrices. Env. Mod. Software 26, 173-178.
+
+Atmar, W. & Patterson, B.D. (1993). The measurement of order and disorder in the distribution of species in fragmented habitat. Oecologia 96, 373-382.
+
+Baselga, A. (2012). The relationship between species replacement, dissimilarity derived from nestedness, and nestedness. Global Ecol. Biogeogr. 21, 1223-1232.
+
+Brualdi, R.A. & Sanderson, J.G. (1999). Nested species subsets, gaps, and discrepancy. Oecologia 119, 256-264.
+
+Patterson, B.D. & Atmar, W. (1986). Nested subsets and the structure of insular mammalian faunas and archipelagos. Biol. J. Linnean Soc. 28, 65-82.
+
+Rodríguez-Gironés, M.A. & Santamaria, L. (2006). A new algorithm to calculate the nestedness temperature of presence-absence matrices. J. Biogeogr. 33, 924-935.
+
+Stone, L. & Roberts, A. (1990). The checkerboard score and species distributions. Oecologia 85, 74-79.
+
+Wright, D.H., Patterson, B.D., Mikkelson, G.M., Cutler, A. & Atmar, W. (1998). A comparative analysis of nested subset patterns of species composition. Oecologia 113, 1-20.
+
