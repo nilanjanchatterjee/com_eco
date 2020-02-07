@@ -9,8 +9,7 @@ We will use that measure to calculate nestedness here. The value ranges from 0-1
 *Vegan* is one the most important library for analysis of community dataset. The most common type of community data is sites x species data. We would uploda a dummy dataset in the system and leran how to calculate nestedness.
 
 ## Import the data in R 
-
-```{r }
+```{r}
 library(vegan)
 setwd("C:/Users/HP/Documents/com_eco")
 bhagbird <-read.csv("allbird_38.csv")
