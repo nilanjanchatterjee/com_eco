@@ -29,8 +29,8 @@ Darker the colour means higher the probability of the species extinction from th
 plot(nesttry, xlab = "Species", ylab="Sites",main="Extinction probability")
 plot(nesttry, kind="incidence",xlab = "Species", ylab="Sites",main="Presence-absence")
 ```
-![Extinction probability](https://nilanjanchatterjee.github.io/extp.jpg)
-![Presence absence](https://nilanjanchatterjee.github.io/pa.jpg)
+![Extinction probability](https://nilanjanchatterjee.github.io/extp.jpeg)
+![Presence absence](https://nilanjanchatterjee.github.io/pa.jpeg)
 
 
 ## Beta-diversity
