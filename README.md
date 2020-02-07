@@ -17,10 +17,14 @@ head(bhagbird)
 ```
 
 ## Calculating nestedness
+Nestedness can be calculated by various methods (Almeida-Neto et al., 2008,  Baselga 2012). The references of the methods are given at the bottom of the page. Here I am showing a simple method to calcualte nestedness. This measure is based on the matrix temperature which is defined as the sum of “surprises” in arranged matrix. For the calculation, the *site x species* matrix is arranged based on sites with higher number of species and species present at maximum sites. 
 ```{r}
 nesttry<-nestedtemp(bhagbird[,2:15])
 nesttry
 ```
+<pre><code>## nestedness temperature: 17.74614 
+## with matrix fill 0.4450549</code></pre>
+
 ## Including Plots
 The plots for nestedness temperature is given by these plots.
 Darker the colour means higher the probability of the species extinction from the site.
@@ -91,7 +95,34 @@ beta_abd <- as.matrix(beta.try$beta.bray)
 beta_abd[upper.tri(beta_abd, diag = FALSE)] <- " "
 head(beta_abd)
 ```
-
+<div><pre><code>##   1                   2                   3                  
+## 1 &quot;0&quot;                 &quot;&quot;                  &quot;&quot;                 
+## 2 &quot;0.333333333333333&quot; &quot;0&quot;                 &quot;&quot;                 
+## 3 &quot;0.333333333333333&quot; &quot;0.5&quot;               &quot;0&quot;                
+## 4 &quot;0.333333333333333&quot; &quot;0.454545454545455&quot; &quot;0.636363636363636&quot;
+## 5 &quot;0.454545454545455&quot; &quot;0.428571428571429&quot; &quot;0.142857142857143&quot;
+## 6 &quot;0.368421052631579&quot; &quot;0.6&quot;               &quot;0.466666666666667&quot;
+##   4                   5                   6   7  8  9  10 11 12 13 14 15
+## 1 &quot;&quot;                  &quot;&quot;                  &quot;&quot;  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 2 &quot;&quot;                  &quot;&quot;                  &quot;&quot;  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 3 &quot;&quot;                  &quot;&quot;                  &quot;&quot;  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 4 &quot;0&quot;                 &quot;&quot;                  &quot;&quot;  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 5 &quot;0.6&quot;               &quot;0&quot;                 &quot;&quot;  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 6 &quot;0.666666666666667&quot; &quot;0.571428571428571&quot; &quot;0&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##   16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39
+## 1 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 2 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 3 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 4 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 5 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 6 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+##   40 41 42 43
+## 1 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 2 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 3 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 4 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 5 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;
+## 6 &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot;</code></pre></div>
 
 ## Beta-diversity calculation using presence-absence data
 ```{r}
