@@ -41,6 +41,48 @@ library(betapart)
 spr_14 <-read.csv("spring_14.csv")
 head(spr_14)
 ```
+<pre><code>##                         X  X.1 Phalacrocorax_niger Vanellus_duvaucelii
+## 1            Triveni ghat 2014                   1                   1
+## 2                  Ghat 1 2014                   1                   1
+## 3                  Ghat 2 2014                   1                   0
+## 4                Ramjhula 2014                   0                   1
+## 5  Phoolchatti main river 2014                   1                   0
+## 6 Phoolchatti side stream 2014                   1                   0
+##   Ibidorhyncha_struthersii Actitis_hypoleucos Cinclus_pallasii
+## 1                        0                  0                0
+## 2                        0                  0                0
+## 3                        0                  0                0
+## 4                        0                  0                0
+## 5                        0                  0                0
+## 6                        0                  0                1
+##   Enicurus_scouleri Enicurus_maculatus Myophonus_caeruleus
+## 1                 0                  0                   0
+## 2                 0                  0                   0
+## 3                 0                  0                   0
+## 4                 0                  0                   0
+## 5                 0                  0                   0
+## 6                 1                  0                   0
+##   Chaimarrornis_leucocephalus Rhyacornis_fuliginosa
+## 1                           0                     0
+## 2                           0                     0
+## 3                           0                     0
+## 4                           0                     0
+## 5                           0                     0
+## 6                           0                     0
+##   Motacilla_madaraspatensis Motacilla_cinerea Motacilla_alba
+## 1                         2                 0              0
+## 2                         1                 0              0
+## 3                         1                 0              0
+## 4                         4                 0              0
+## 5                         1                 0              0
+## 6                         1                 0              0
+##   Megaceryle_lugubris Halcyon_smyrnensis Alcedo_atthis
+## 1                   1                  1             2
+## 2                   0                  1             0
+## 3                   1                  0             1
+## 4                   1                  1             0
+## 5                   1                  0             0
+## 6                   3                  1             3</code></pre>
 
 ## Beta-diversity calculation using abundance data
 ```{r}
